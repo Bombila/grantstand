@@ -41,7 +41,7 @@
 
             $('a.btn-danger').on("click", function (e) {
 
-                if (!confirm("Подтвердите действие")) {
+                if (!confirm("Confirm the action")) {
                     e.preventDefault();
                 } else {
                     //
@@ -90,7 +90,7 @@
                 }
 
                 if ($(this).data('method').toLowerCase() == "delete") {
-                    if (!confirm('Подтвердите удаление')) {
+                    if (!confirm('Confirm the deletion')) {
                         return false;
                     }
                 }
@@ -138,7 +138,7 @@
                 <!-- Authentication Links -->
                 @if (Auth::guest())
                     <li><a href="/login'">Login</a></li>
-                    <li><a href="/register">Register</a></li>
+                    <!--<li><a href="/register">Register</a></li>-->
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
