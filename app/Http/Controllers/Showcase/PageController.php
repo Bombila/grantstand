@@ -9,6 +9,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Brand;
 use App\Article;
+use App\Modal;
+use App\Button;
+use App\Setting;
 
 class PageController extends Controller
 {
@@ -19,7 +22,10 @@ class PageController extends Controller
         return view('showcase.pages.index', [
             'reviews'   => Review::get(),
             'brands'    => Brand::get(),
-            'articles'  => Article::get()
+            'articles'  => Article::get(),
+            'modals'    => Modal::get(),
+            'buttons'   => Button::get(),
+            'settings'  => Setting::where('page', '=', 'home')->first()
         ]);
     }
 

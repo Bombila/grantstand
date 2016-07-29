@@ -30,7 +30,7 @@ class ReviewController extends Controller
     {
         $data = $request->all();
 
-        if($data['uploaded_photo'])
+        if(!isset($data['client_photo']))
         {
             $data['client_photo'] = $data['uploaded_photo'];
         }

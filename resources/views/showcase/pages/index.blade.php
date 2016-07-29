@@ -23,18 +23,28 @@
     <section class="info container"><h2 class="heading">Welcome to Grandstand</h2>
 
         <div class="row">
-            <div class="info__text col-md-8 col-md-offset-2">We are a full service sports and entertainment agency
-                specializing in athlete representation, their management, and all surrounding business services our
-                clients may need to excell in their career. We have proprietary technology and production capabilities
-                in house. to execute and enhance the marketing and media strategies we develop for our clients. Our
-                clients are elite professional athletes and include decorated Olympians and globally recognized
-                prospects, as well as sports leagues, government agencies, and premium brands. Learn more about how we
-                can help your company, brand and career.
-                <div class="centered"><a href="#" data-toggle="modal" data-target="#myModal-3"
-                                         class="button button--block">Open Video</a><a href="#" data-toggle="modal"
-                                                                                       data-target="#myModal-2"
-                                                                                       class="button button--block">Open
-                        Image</a><a href="#" class="button button--block">Contact Us Today</a></div>
+            <div class="info__text col-md-8 col-md-offset-2">{{ $settings->welcome }}
+                <div class="centered">
+
+                    @foreach($buttons as $button)
+
+                        <a href="
+                            @if($button->type === 'link')
+                                {{ $button->link }}
+                            @else
+                                #
+                            @endif
+                        "
+                           @if($button->type === 'modal')
+                                data-toggle="modal"
+                           @endif
+                           data-target="#myModal-{{ $button->modal_id }}" class="button button--block">
+                            {{ $button->text }}
+                        </a>
+
+                    @endforeach
+
+                </div>
             </div>
         </div>
     </section><!-- What We Do-->

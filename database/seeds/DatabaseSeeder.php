@@ -11,11 +11,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('settings')->insert(
+        /*DB::table('settings')->insert(
             array(
                 'name' => 'logo',
                 )
-        );
+        );*/
+        /*DB::table('settings')->insert(
+            array(
+                'name' => 'page',
+                'page' => 'home',
+            )
+        );*/
 
 
     }

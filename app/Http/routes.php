@@ -58,6 +58,27 @@ Route::group([ 'prefix' => 'admin', 'middleware' => 'auth' ], function () {
     Route::get('article/create', 'Admin\Material\ArticleController@getCreate');
     Route::post('article/create', 'Admin\Material\ArticleController@store');
     Route::get('article/destroy/{article}', 'Admin\Material\ArticleController@destroy');
+
+    // Modals
+    Route::get('modal', ['as' => 'admin.modal.index', 'uses' => 'Admin\Modal\ModalController@getIndex']);
+    Route::get('modal/edit/{modal}', 'Admin\Modal\ModalController@getEdit');
+    Route::post('modal/edit/{modal}', 'Admin\Modal\ModalController@update');
+    Route::get('modal/create', 'Admin\Modal\ModalController@getCreate');
+    Route::post('modal/create', 'Admin\Modal\ModalController@store');
+    Route::get('modal/destroy/{modal}', 'Admin\Modal\ModalController@destroy');
+
+    // Buttons
+    Route::get('button', ['as' => 'admin.button.index', 'uses' => 'Admin\Button\ButtonController@getIndex']);
+    Route::get('button/edit/{button}', 'Admin\Button\ButtonController@getEdit');
+    Route::post('button/edit/{button}', 'Admin\Button\ButtonController@update');
+    Route::get('button/create', 'Admin\Button\ButtonController@getCreate');
+    Route::post('button/create', 'Admin\Button\ButtonController@store');
+    Route::get('button/destroy/{button}', 'Admin\Button\ButtonController@destroy');
+
+    // Home page settings
+    Route::get('home', ['as' => 'admin.home', 'uses' => 'Admin\Home\SettingsController@getIndex']);
+    Route::post('home', 'Admin\Home\SettingsController@update');
+
 });
 
 Route::auth();
