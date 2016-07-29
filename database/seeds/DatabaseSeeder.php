@@ -16,12 +16,12 @@ class DatabaseSeeder extends Seeder
                 'name' => 'logo',
                 )
         );*/
-        /*DB::table('settings')->insert(
+        DB::table('settings')->insert(
             array(
                 'name' => 'page',
                 'page' => 'home',
             )
-        );*/
+        );
 
 
     }
