@@ -1,19 +1,9 @@
 @extends('showcase.layout')
 
 @section('main-nav')
-    <ul id="main-nav" class="nav-menu nav-menu--inverse col-sm-12 col-md-9">
-        <li class="nav-menu__item"><a href="services">Services</a></li>
-        <li class="nav-menu__item active nav-menu--has-children"><a href="clients">Clients</a>
-            <ul class="nav-menu__second">
-                <li class="nav-menu__item"><a href="#">Star Team</a></li>
-                <li class="nav-menu__item"><a href="#">Star Team</a></li>
-                <li class="nav-menu__item"><a href="#">Star Team</a></li>
-                <li class="nav-menu__item"><a href="#">Star Team</a></li>
-            </ul>
-        </li>
-        <li class="nav-menu__item"><a href="about">About Us</a></li>
-        <li class="nav-menu__item"><a href="mobile">Mobile Technology</a></li>
-    </ul>
+
+    @include('showcase.pages._main-nav')
+
     @stop
 
 @section('content')

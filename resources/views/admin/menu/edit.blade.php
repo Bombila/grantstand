@@ -45,6 +45,33 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="form-group col-md-6">
+                <div class="form-group">
+                    <label for="parent_id">Parent menu</label>
+                    <select class="form-control" name="parent_id" id="parent_id">
+
+                        <option
+                                @if(!$menu->parent_id)
+                                      selected="selected"
+                                @endif
+                                value="0">Not selected</option>
+
+                        @foreach($parents as $parent)
+
+                                <option
+                                        @if($menu->parent_id == $parent->id)
+                                                selected="selected"
+                                        @endif
+                                        value="{{ $parent->id }}">{{ $parent->name }}</option>
+
+                        @endforeach
+
+                    </select>
+                </div>
+            </div>
+        </div>
+
         <button type="submit" class="btn btn-primary">Save</button>
 
         <input type="hidden" name="_token" value="{{ csrf_token() }}">

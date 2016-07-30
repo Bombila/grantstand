@@ -20,7 +20,14 @@ class MenuController extends Controller
 
     public function getEdit(Menu $menu)
     {
-        return view('admin.menu.edit')->withMenu($menu);
+        $parentMenus = Menu::where('id', '!=', $menu->id)->get();
+
+        //dd($parentMenus);
+
+        return view('admin.menu.edit', [
+            'menu' => $menu,
+            'parents' => $parentMenus
+        ]);
     }
 
     public function update(Menu $menu, Request $request)
@@ -45,7 +52,9 @@ class MenuController extends Controller
 
     public function getCreate()
     {
-        return view('admin.menu.create');
+        $parentMenus = Menu::get();
+
+        return view('admin.menu.create')->withParents($parentMenus);
     }
 
     public function store(Request $request)

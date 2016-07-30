@@ -5,12 +5,9 @@
 @stop
 
 @section('main-nav')
-    <ul id="main-nav" class="nav-menu col-sm-12 col-md-9">
-        <li class="nav-menu__item"><a href="services">Services</a></li>
-        <li class="nav-menu__item active"><a href="clients">Clients</a></li>
-        <li class="nav-menu__item"><a href="about">About Us</a></li>
-        <li class="nav-menu__item"><a href="mobile">Mobile Technology</a></li>
-    </ul>
+
+    @include('showcase.pages._main-nav')
+
 @stop
 
 @section('content')
