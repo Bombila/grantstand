@@ -13,6 +13,8 @@ use App\Modal;
 use App\Button;
 use App\Setting;
 use App\Menu;
+use App\Help;
+use App\Business;
 
 class PageController extends Controller
 {
@@ -20,7 +22,7 @@ class PageController extends Controller
     {
         //dd($_SERVER['REQUEST_URI']);
 
-        $reviews = Review::get();
+        //$reviews = Review::get();
 
         return view('showcase.pages.index', [
             'reviews'   => Review::get(),
@@ -35,9 +37,16 @@ class PageController extends Controller
 
     public function getServices()
     {
+        //$helps = Help::getHelpsWithTags();
+
+        //dd($helps);
+
         return view('showcase.pages.services',
             [
-                'menus'     => Menu::getMainMenu()
+                'menus'     => Menu::getMainMenu(),
+                'helps'     => Help::getHelpsWithTags(),
+                'settings'  => Setting::where('page', '=', 'services')->first(),
+                'businesses' => Business::get()
             ]);
     }
 

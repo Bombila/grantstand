@@ -79,6 +79,30 @@ Route::group([ 'prefix' => 'admin', 'middleware' => 'auth' ], function () {
     Route::get('home', ['as' => 'admin.home', 'uses' => 'Admin\Home\SettingsController@getIndex']);
     Route::post('home', 'Admin\Home\SettingsController@update');
 
+    /*
+     * Services page
+     */
+
+    // How we can help
+    Route::get('help', ['as' => 'admin.help.index', 'uses' => 'Admin\Help\HelpController@getIndex']);
+    Route::get('help/edit/{help}', 'Admin\Help\HelpController@getEdit');
+    Route::post('help/edit/{help}', 'Admin\Help\HelpController@update');
+    Route::get('help/create', 'Admin\Help\HelpController@getCreate');
+    Route::post('help/create', 'Admin\Help\HelpController@store');
+    Route::get('help/destroy/{help}', 'Admin\Help\HelpController@destroy');
+
+    // Service page settings
+    Route::get('service', ['as' => 'admin.service', 'uses' => 'Admin\Service\SettingsController@getIndex']);
+    Route::post('service', 'Admin\Service\SettingsController@update');
+
+    // "Business & Professional Services" section
+    Route::get('business', ['as' => 'admin.business.index', 'uses' => 'Admin\Business\BusinessController@getIndex']);
+    Route::get('business/edit/{business}', 'Admin\Business\BusinessController@getEdit');
+    Route::post('business/edit/{business}', 'Admin\Business\BusinessController@update');
+    Route::get('business/create', 'Admin\Business\BusinessController@getCreate');
+    Route::post('business/create', 'Admin\Business\BusinessController@store');
+    Route::get('business/destroy/{business}', 'Admin\Business\BusinessController@destroy');
+
 });
 
 Route::auth();

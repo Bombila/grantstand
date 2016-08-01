@@ -26,7 +26,7 @@
 <li>
     <a href="/admin/home">
         Settings
-        <span class="glyphicon glyphicon-option-horizontal  pull-right"></span></a>
+        <span class="glyphicon glyphicon-info-sign  pull-right"></span></a>
 </li>
 
 <li>
@@ -59,4 +59,25 @@
 
 
 
+<li><h3>Services Page</h3></li>
+
+<li>
+    <a href="/admin/help">
+        "How we can help" section
+        <span class="glyphicon glyphicon-option-horizontal  pull-right"></span>
+    </a>
+</li>
+
+<li>
+    <a href="/admin/service">
+        Settings
+        <span class="glyphicon glyphicon-info-sign  pull-right"></span></a>
+</li>
+
+<li>
+    <a href="/admin/business">
+        "Business & Professional Services" section
+        <span class="glyphicon glyphicon-option-horizontal  pull-right"></span>
+    </a>
+</li>
 

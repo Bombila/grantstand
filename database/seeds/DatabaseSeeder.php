@@ -18,11 +18,34 @@ class DatabaseSeeder extends Seeder
         );*/
         DB::table('settings')->insert(
             array(
-                'name' => 'page',
+                'name' => 'home',
                 'page' => 'home',
             )
         );
-
+        DB::table('settings')->insert(
+            array(
+                'name' => 'services',
+                'page' => 'services',
+            )
+        );
+        DB::table('settings')->insert(
+            array(
+                'name' => 'clients',
+                'page' => 'clients',
+            )
+        );
+        DB::table('settings')->insert(
+            array(
+                'name' => 'about',
+                'page' => 'about',
+            )
+        );
+        DB::table('settings')->insert(
+            array(
+                'name' => 'mobile',
+                'page' => 'mobile',
+            )
+        );
 
     }
 }
