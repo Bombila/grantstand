@@ -16,7 +16,7 @@
                     @if($modal->type === 'youtube')
 
                         <div class="modal-hero embed-responsive embed-responsive-16by9">
-                            {{ $modal->iframe }}
+                            <?php echo $modal->iframe; ?>
                         </div>
 
                     @endif

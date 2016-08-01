@@ -13,7 +13,7 @@ class SettingsController extends Controller
 {
     public function getIndex()
     {
-        $settings = Setting::where('page', '=', 'services')->first();
+        $settings = Setting::where('page', '=', 'home')->first();
 
         return view('admin.settings.home')->withSettings($settings);
     }
