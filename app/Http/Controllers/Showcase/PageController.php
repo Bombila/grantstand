@@ -16,6 +16,8 @@ use App\Menu;
 use App\Help;
 use App\Business;
 use App\Client;
+use App\Team;
+use App\Production;
 
 class PageController extends Controller
 {
@@ -55,7 +57,10 @@ class PageController extends Controller
     {
         return view('showcase.pages.about', [
             'modals'    => Modal::get(),
-            'menus'     => Menu::getMainMenu()
+            'menus'     => Menu::getMainMenu(),
+            'settings'  => Setting::where('page', '=', 'about')->first(),
+            'teams'     => Team::get(),
+            'productions' => Production::get()
         ]);
     }
 

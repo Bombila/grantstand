@@ -15,56 +15,44 @@
 <main>
     <section class="info container"><h1 class="heading">About GrandStand</h1>
 
+        @if($settings->value_1)
+
         <div class="row">
-            <div class="info__text col-md-8 col-md-offset-2">Benjamin Franklin, inventor, statesman, writer, publisher
-                and economist relates in his autobiography that early in his life he decided to focus on arriving at
-                moral perfection. He made a list of 13 virtues, assigning a page to each. Under each virtue he wrote a
-                summary that gave it fuller meaning. Then he practiced each one for a certain length of time. To make
-                these virtues a habit, Franklin can up with a method to grade himself on his daily actions. In a journal
-                he drew a table with a row for every virtue and a column for every day of the week. Every time he made a
-                fault, he made a mark in the appropriate column.
+            <div class="info__text col-md-6 col-md-offset-2">{{ $settings->about }}
+            </div>
+            <div class="col-md-4 "><img src="{{ $settings->image }}">
             </div>
         </div>
+
+        @else
+
+            <div class="row">
+                <div class="info__text col-md-8 col-md-offset-2">{{ $settings->about }}
+                </div>
+            </div>
+
+        @endif
+
     </section>
     <section class="team container"><h2 class="heading">Our Talented Team</h2>
 
         <div class="team__members row">
-            <div class="member col-md-3"><img src="images/team-1.jpg" class="member__photo">
 
-                <div class="member__bio">
-                    <div class="bio__wrapper">
-                        <div class="bio__name">Anthony Casalena</div>
-                        <div class="bio__position">Video Prduction</div>
+            @foreach($teams as $team)
+
+                <div class="member col-md-3"><img src="{{ $team->image }}" class="member__photo">
+
+                    <div class="member__bio">
+                        <div class="bio__wrapper">
+                            <div class="bio__name">{{ $team->name }}</div>
+                            <div class="bio__position">{{ $team->position }}</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="member col-md-3"><img src="images/team-2.jpg" class="member__photo">
 
-                <div class="member__bio">
-                    <div class="bio__wrapper">
-                        <div class="bio__name">Andrew Bartholomew</div>
-                        <div class="bio__position">Video Prduction</div>
-                    </div>
-                </div>
-            </div>
-            <div class="member col-md-3"><img src="images/team-3.jpg" class="member__photo">
+            @endforeach
 
-                <div class="member__bio">
-                    <div class="bio__wrapper">
-                        <div class="bio__name">John Colton</div>
-                        <div class="bio__position">YouTube Producer</div>
-                    </div>
-                </div>
-            </div>
-            <div class="member col-md-3"><img src="images/team-4.jpg" class="member__photo">
 
-                <div class="member__bio">
-                    <div class="bio__wrapper">
-                        <div class="bio__name">Ali Kazemi</div>
-                        <div class="bio__position">YouTube Producer</div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
     <section class="content container"><h2 class="heading">Content Production</h2>

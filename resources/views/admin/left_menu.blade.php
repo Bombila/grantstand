@@ -90,3 +90,23 @@
         <span class="glyphicon glyphicon-option-horizontal  pull-right"></span>
     </a>
 </li>
+
+<li><h3>About Page</h3></li>
+
+<li>
+    <a href="/admin/about">
+        Settings
+        <span class="glyphicon glyphicon-info-sign  pull-right"></span></a>
+</li>
+
+<li>
+    <a href="/admin/team">
+        Our talented team
+        <span class="glyphicon glyphicon-option-horizontal  pull-right"></span></a>
+</li>
+
+<li>
+    <a href="/admin/production">
+       content production
+        <span class="glyphicon glyphicon-option-horizontal  pull-right"></span></a>
+</li>

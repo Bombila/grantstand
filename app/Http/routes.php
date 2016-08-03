@@ -111,6 +111,25 @@ Route::group([ 'prefix' => 'admin', 'middleware' => 'auth' ], function () {
     Route::post('client/create', 'Admin\Client\ClientController@store');
     Route::get('client/destroy/{client}', 'Admin\Client\ClientController@destroy');
 
+    // About us page settings
+    Route::get('about', ['as' => 'admin.about', 'uses' => 'Admin\About\SettingsController@getIndex']);
+    Route::post('about', 'Admin\About\SettingsController@update');
+
+    //Team
+    Route::get('team', ['as' => 'admin.team.index', 'uses' => 'Admin\Team\TeamController@getIndex']);
+    Route::get('team/edit/{team}', 'Admin\Team\TeamController@getEdit');
+    Route::post('team/edit/{team}', 'Admin\Team\TeamController@update');
+    Route::get('team/create', 'Admin\Team\TeamController@getCreate');
+    Route::post('team/create', 'Admin\Team\TeamController@store');
+    Route::get('team/destroy/{team}', 'Admin\Team\TeamController@destroy');
+
+    //Production
+    Route::get('production', ['as' => 'admin.production.index', 'uses' => 'Admin\Production\ProductionController@getIndex']);
+    Route::get('production/edit/{production}', 'Admin\Production\ProductionController@getEdit');
+    Route::post('production/edit/{production}', 'Admin\Production\ProductionController@update');
+    Route::get('production/create', 'Admin\Production\ProductionController@getCreate');
+    Route::post('production/create', 'Admin\Production\ProductionController@store');
+    Route::get('production/destroy/{production}', 'Admin\Production\ProductionController@destroy');
 });
 
 Route::auth();
