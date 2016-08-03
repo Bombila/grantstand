@@ -58,21 +58,20 @@
     <section class="content container"><h2 class="heading">Content Production</h2>
 
         <div class="content__media row">
-            <div class="media col-xs-12 col-md-4"><img src="images/content-1.jpg" class="media__img"><a role="button"
-                                                                                                        data-toggle="modal"
-                                                                                                        data-target="#myModal-1"
-                                                                                                        class="media__link">The
-                    3 Golden Rules Professional Graphic Designers Don’t Want You To Know About</a></div>
-            <div class="media col-xs-12 col-md-4"><img src="images/content-2.jpg" class="media__img"><a role="button"
-                                                                                                        data-toggle="modal"
-                                                                                                        data-target="#myModal-1"
-                                                                                                        class="media__link">The
-                    Power Of Notes</a></div>
-            <div class="media col-xs-12 col-md-4"><img src="images/content-3.jpg" class="media__img"><a role="button"
-                                                                                                        data-toggle="modal"
-                                                                                                        data-target="#myModal-1"
-                                                                                                        class="media__link">5
-                    Reasons To Purchase Desktop Computers</a></div>
+
+            @foreach ($productions as $production)
+
+                <div class="media col-xs-12 col-md-4"><img src="{{ $production->image }}" class="media__img">
+                    <a role="button"
+                                       data-toggle="modal"
+                                       data-target="#myModal-{{ $production->modal_id }}"
+                                       class="media__link">
+                        {{ $production->title }}
+                    </a>
+                </div>
+
+            @endforeach
+
         </div>
     </section>
     <section class="contacts container"><h2 class="heading">Contact Us</h2>
