@@ -81,3 +81,12 @@
     </a>
 </li>
 
+
+<li><h3>Clients Page</h3></li>
+
+<li>
+    <a href="/admin/client">
+        Clients
+        <span class="glyphicon glyphicon-option-horizontal  pull-right"></span>
+    </a>
+</li>

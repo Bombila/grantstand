@@ -103,6 +103,14 @@ Route::group([ 'prefix' => 'admin', 'middleware' => 'auth' ], function () {
     Route::post('business/create', 'Admin\Business\BusinessController@store');
     Route::get('business/destroy/{business}', 'Admin\Business\BusinessController@destroy');
 
+    //Clients in clients page
+    Route::get('client', ['as' => 'admin.client.index', 'uses' => 'Admin\Client\ClientController@getIndex']);
+    Route::get('client/edit/{client}', 'Admin\Client\ClientController@getEdit');
+    Route::post('client/edit/{client}', 'Admin\Client\ClientController@update');
+    Route::get('client/create', 'Admin\Client\ClientController@getCreate');
+    Route::post('client/create', 'Admin\Client\ClientController@store');
+    Route::get('client/destroy/{client}', 'Admin\Client\ClientController@destroy');
+
 });
 
 Route::auth();

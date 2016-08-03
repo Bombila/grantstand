@@ -15,15 +15,12 @@ use App\Setting;
 use App\Menu;
 use App\Help;
 use App\Business;
+use App\Client;
 
 class PageController extends Controller
 {
     public function getIndex()
     {
-        //dd($_SERVER['REQUEST_URI']);
-
-        //$reviews = Review::get();
-
         return view('showcase.pages.index', [
             'reviews'   => Review::get(),
             'brands'    => Brand::get(),
@@ -37,10 +34,6 @@ class PageController extends Controller
 
     public function getServices()
     {
-        //$helps = Help::getHelpsWithTags();
-
-        //dd($helps);
-
         return view('showcase.pages.services',
             [
                 'menus'     => Menu::getMainMenu(),
@@ -52,16 +45,6 @@ class PageController extends Controller
 
     public function getMobile()
     {
-        /*$menu = Menu::find(13);
-
-        foreach($menu->getChildMenu() as $child)
-        {
-            echo $child->slug . ' ' . $child->name . '<br >' ;
-        }
-
-        return;
-        dd($menu);*/
-
         return view('showcase.pages.mobile',
             [
                 'menus'     => Menu::getMainMenu()
@@ -78,11 +61,10 @@ class PageController extends Controller
 
     public function getClients()
     {
-        //dd($_SERVER['REQUEST_URI']);
-
         return view('showcase.pages.clients', [
             'modals'    => Modal::get(),
-            'menus'     => Menu::getMainMenu()
+            'menus'     => Menu::getMainMenu(),
+            'clients'   => Client::get()
         ]);
     }
 }

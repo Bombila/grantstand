@@ -23,9 +23,9 @@ class HelpController extends Controller
 
     public function getEdit(Help $help)
     {
-        $helpLi = $help->getHelpToLiTag();
+        //$helpLi = $help->getHelpToLiTag();
 
-        return view('admin.help.edit')->withHelp($helpLi);
+        return view('admin.help.edit')->withHelp($help);
     }
 
     public function update(Help $help, Request $request, File $file)

@@ -3,18 +3,18 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Modal extends Model
+class Client extends Model
 {
-    protected $fillable = ['title', 'text', 'type', 'iframe', 'image', 'social_icons'];
+    protected $fillable = ['name', 'position', 'text', 'image', 'modal_id'];
 
     public function getImageTag()
     {
         return '<img  height="50px" id="uploaded_photo" src="'. $this->image .'">';
     }
 
-
-
-
+    public function Modal()
+    {
+        return $this->BelongsTo(Modal::class);
+    }
 }

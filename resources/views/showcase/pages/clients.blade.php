@@ -13,126 +13,23 @@
 <main class="container"><h1 class="heading">Our Clients</h1>
 
     <div class="team__members row">
-        <div role="button" data-toggle="modal" data-target="#myModal-2" class="member member--client col-md-3"><img
-                    src="images/team-1.jpg" class="member__photo">
 
-            <div class="member__bio">
-                <div class="bio__wrapper">
-                    <div class="bio__name">Anthony Casalena</div>
-                    <div class="bio__position">Video Prduction</div>
+        @foreach ($clients as $client)
+
+            <div role="button" data-toggle="modal" data-target="#myModal-{{ $client->modal_id }}" class="member member--client col-md-3"><img
+                        src="{{ $client->image }}" class="member__photo">
+
+                <div class="member__bio">
+                    <div class="bio__wrapper">
+                        <div class="bio__name">{{ $client->name }}</div>
+                        <div class="bio__position">{{ $client->position }}</div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div role="button" data-toggle="modal" data-target="#myModal-2" class="member member--client col-md-3"><img
-                    src="images/team-2.jpg" class="member__photo">
 
-            <div class="member__bio">
-                <div class="bio__wrapper">
-                    <div class="bio__name">Andrew Bartholomew</div>
-                    <div class="bio__position">Video Prduction</div>
-                </div>
-            </div>
-        </div>
-        <div role="button" data-toggle="modal" data-target="#myModal-2" class="member member--client col-md-3"><img
-                    src="images/team-3.jpg" class="member__photo">
+        @endforeach
 
-            <div class="member__bio">
-                <div class="bio__wrapper">
-                    <div class="bio__name">John Colton</div>
-                    <div class="bio__position">YouTube Producer</div>
-                </div>
-            </div>
-        </div>
-        <div role="button" data-toggle="modal" data-target="#myModal-2" class="member member--client col-md-3"><img
-                    src="images/team-4.jpg" class="member__photo">
 
-            <div class="member__bio">
-                <div class="bio__wrapper">
-                    <div class="bio__name">Ali Kazemi</div>
-                    <div class="bio__position">YouTube Producer</div>
-                </div>
-            </div>
-        </div>
-        <div role="button" data-toggle="modal" data-target="#myModal-2" class="member member--client col-md-3"><img
-                    src="images/team-1.jpg" class="member__photo">
-
-            <div class="member__bio">
-                <div class="bio__wrapper">
-                    <div class="bio__name">Anthony Casalena</div>
-                    <div class="bio__position">Video Prduction</div>
-                </div>
-            </div>
-        </div>
-        <div role="button" data-toggle="modal" data-target="#myModal-2" class="member member--client col-md-3"><img
-                    src="images/team-2.jpg" class="member__photo">
-
-            <div class="member__bio">
-                <div class="bio__wrapper">
-                    <div class="bio__name">Andrew Bartholomew</div>
-                    <div class="bio__position">Video Prduction</div>
-                </div>
-            </div>
-        </div>
-        <div role="button" data-toggle="modal" data-target="#myModal-2" class="member member--client col-md-3"><img
-                    src="images/team-3.jpg" class="member__photo">
-
-            <div class="member__bio">
-                <div class="bio__wrapper">
-                    <div class="bio__name">John Colton</div>
-                    <div class="bio__position">YouTube Producer</div>
-                </div>
-            </div>
-        </div>
-        <div role="button" data-toggle="modal" data-target="#myModal-2" class="member member--client col-md-3"><img
-                    src="images/team-4.jpg" class="member__photo">
-
-            <div class="member__bio">
-                <div class="bio__wrapper">
-                    <div class="bio__name">Ali Kazemi</div>
-                    <div class="bio__position">YouTube Producer</div>
-                </div>
-            </div>
-        </div>
-        <div role="button" data-toggle="modal" data-target="#myModal-2" class="member member--client col-md-3"><img
-                    src="images/team-1.jpg" class="member__photo">
-
-            <div class="member__bio">
-                <div class="bio__wrapper">
-                    <div class="bio__name">Anthony Casalena</div>
-                    <div class="bio__position">Video Prduction</div>
-                </div>
-            </div>
-        </div>
-        <div role="button" data-toggle="modal" data-target="#myModal-2" class="member member--client col-md-3"><img
-                    src="images/team-2.jpg" class="member__photo">
-
-            <div class="member__bio">
-                <div class="bio__wrapper">
-                    <div class="bio__name">Andrew Bartholomew</div>
-                    <div class="bio__position">Video Prduction</div>
-                </div>
-            </div>
-        </div>
-        <div role="button" data-toggle="modal" data-target="#myModal-2" class="member member--client col-md-3"><img
-                    src="images/team-3.jpg" class="member__photo">
-
-            <div class="member__bio">
-                <div class="bio__wrapper">
-                    <div class="bio__name">John Colton</div>
-                    <div class="bio__position">YouTube Producer</div>
-                </div>
-            </div>
-        </div>
-        <div role="button" data-toggle="modal" data-target="#myModal-2" class="member member--client col-md-3"><img
-                    src="images/team-4.jpg" class="member__photo">
-
-            <div class="member__bio">
-                <div class="bio__wrapper">
-                    <div class="bio__name">Ali Kazemi</div>
-                    <div class="bio__position">YouTube Producer</div>
-                </div>
-            </div>
-        </div>
     </div>
 </main><!-- End of Main-->
 

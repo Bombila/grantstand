@@ -1,35 +1,38 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Business;
+namespace App\Http\Controllers\Admin\Client;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
-use App\Business;
+use App\Client;
 use App\File;
+use App\Modal;
 use Illuminate\Support\Facades\Validator;
 
-class BusinessController extends Controller
+class ClientController extends Controller
 {
     public function getIndex()
     {
-        $businessList = Business::get();
+        $clientList = Client::get();
 
-        //dd($businessList);
+        //dd($clientList);
 
-        return view('admin.business.list')->withBusinesses($businessList);
+        return view('admin.client.list')->withClientes($clientList);
     }
 
-    public function getEdit(Business $business)
+    public function getEdit(Client $client)
     {
-        //$businessLi = $business->getBusinessToLiTag();
+        $modals = Modal::get();
 
-        return view('admin.business.edit')->withBusiness($business);
+        return view('admin.client.edit', [
+            'client' => $client,
+            'modals' => $modals
+        ]);
     }
 
-    public function update(Business $business, Request $request, File $file)
+    public function update(Client $client, Request $request, File $file)
     {
         $data = $request->all();
 
@@ -46,7 +49,9 @@ class BusinessController extends Controller
             $data,
             [
                 'name' => 'required',
+                'position' => 'required',
                 'image' => 'sometimes',
+                'modal_id' => 'required'
             ]
         );
 
@@ -55,14 +60,16 @@ class BusinessController extends Controller
             return redirect()->back()->withInput()->withErrors($validator->messages());
         }
 
-        $business->update($data);
+        $client->update($data);
 
-        return redirect()->route('admin.business.index')->withMsg('saved successful');
+        return redirect()->route('admin.client.index')->withMsg('saved successful');
     }
 
     public function getCreate()
     {
-        return view('admin.business.create');
+        $modals = Modal::get();
+
+        return view('admin.client.create')->withModals($modals);
     }
 
     public function store(Request $request, File $file)
@@ -71,7 +78,9 @@ class BusinessController extends Controller
             $request->all(),
             [
                 'name' => 'required',
+                'position' => 'required',
                 'image' => 'sometimes',
+                'modal_id' => 'required'
             ]
         );
 
@@ -87,17 +96,17 @@ class BusinessController extends Controller
             $data['image'] = $file->uploadFile($request->file('image'));
         }
 
-        $business = Business::create($data);
+        $client = Client::create($data);
 
-        $business->save();
+        $client->save();
 
-        return redirect()->route('admin.business.index')->withMsg('saved successful');
+        return redirect()->route('admin.client.index')->withMsg('saved successful');
     }
 
-    public function destroy(Business $business)
+    public function destroy(Client $client)
     {
-        $business->delete();
+        $client->delete();
 
-        return redirect()->route('admin.business.index')->withMsg('deleted successful');
+        return redirect()->route('admin.client.index')->withMsg('deleted successful');
     }
 }
