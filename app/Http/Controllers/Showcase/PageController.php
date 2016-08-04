@@ -34,7 +34,8 @@ class PageController extends Controller
             'modals'    => Modal::get(),
             'buttons'   => Button::get(),
             'settings'  => Setting::where('page', '=', 'home')->first(),
-            'menus'     => Menu::getMainMenu()
+            'menus'     => Menu::getMainMenu(),
+            'logo'      => Setting::where('name', '=', 'logo')->first(),
         ]);
     }
 
@@ -45,7 +46,8 @@ class PageController extends Controller
                 'menus'     => Menu::getMainMenu(),
                 'helps'     => Help::getHelpsWithTags(),
                 'settings'  => Setting::where('page', '=', 'services')->first(),
-                'businesses' => Business::get()
+                'businesses' => Business::get(),
+                'logo'      => Setting::where('name', '=', 'logo')->first(),
             ]);
     }
 
@@ -58,7 +60,8 @@ class PageController extends Controller
                 'works'     => Work::get(),
                 'scores'     => Score::get(),
                 'sayings'    => Saying::get(),
-                'settings'  => Setting::where('page', '=', 'mobile')->first()
+                'settings'  => Setting::where('page', '=', 'mobile')->first(),
+                'logo'      => Setting::where('name', '=', 'logo')->first(),
             ]);
     }
 
@@ -69,7 +72,8 @@ class PageController extends Controller
             'menus'     => Menu::getMainMenu(),
             'settings'  => Setting::where('page', '=', 'about')->first(),
             'teams'     => Team::get(),
-            'productions' => Production::get()
+            'productions' => Production::get(),
+            'logo'      => Setting::where('name', '=', 'logo')->first(),
         ]);
     }
 
@@ -78,7 +82,8 @@ class PageController extends Controller
         return view('showcase.pages.clients', [
             'modals'    => Modal::get(),
             'menus'     => Menu::getMainMenu(),
-            'clients'   => Client::get()
+            'clients'   => Client::get(),
+            'logo'      => Setting::where('name', '=', 'logo')->first(),
         ]);
     }
 }

@@ -22,12 +22,17 @@
         </button>
         <div class="header-inner row">
             <div class="brand col-sm-12 col-md-3"><a href="/">
-                    <svg class="brand__logo">
-                        <use xlink:href="images/icons.svg#logo"></use>
-                    </svg>
+                    @if($logo->value_1)
+                        <svg class="brand__logo">
+                            <use xlink:href="<?php echo $logo->image_1; ?>#logo"></use>
+                        </svg>
+                    @else
+                        <img src="{{ $logo->image_2 }}">
+                    @endif
                 </a>
             </div>
             @yield('main-nav')
+
         </div>
     </div>
 </header><!-- End of Header-->
@@ -35,9 +40,13 @@
 @yield('content')
 
 <a id="to-top" href="#top" class="scroll-top">
-    <svg class="scroll-top__icon">
-        <use xlink:href="images/icons.svg#arrow-up"></use>
-    </svg>
+    @if($logo->value_1)
+        <svg class="scroll-top__icon">
+            <use xlink:href="<?php echo $logo->image_1; ?>#arrow-up"></use>
+        </svg>
+    @else
+        <img src="{{ $logo->image_2 }}">
+    @endif
 </a>
 <footer>
     <div class="container">

@@ -24,7 +24,7 @@ Route::get('/admin', 'Admin\Dashboard\DashboardController@getWelcome');
 Route::group([ 'prefix' => 'admin', 'middleware' => 'auth' ], function () {
 
     // Logo
-    Route::get('logo', 'Admin\Logo\LogoController@getEdit');
+    Route::get('logo', ['as' => 'admin.logo', 'uses' => 'Admin\Logo\LogoController@getEdit']);
     Route::post('logo', 'Admin\Logo\LogoController@update');
 
     // Menu
