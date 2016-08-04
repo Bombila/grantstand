@@ -11,12 +11,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        /*DB::table('settings')->insert(
+        DB::table('settings')->insert(
             array(
                 'name' => 'logo',
                 )
-        );*/
-        DB::table('settings')->insert(
+        );
+        /*DB::table('settings')->insert(
             array(
                 'name' => 'home',
                 'page' => 'home',
@@ -45,7 +45,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'mobile',
                 'page' => 'mobile',
             )
-        );
+        );*/
 
     }
 }
