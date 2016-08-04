@@ -130,6 +130,42 @@ Route::group([ 'prefix' => 'admin', 'middleware' => 'auth' ], function () {
     Route::get('production/create', 'Admin\Production\ProductionController@getCreate');
     Route::post('production/create', 'Admin\Production\ProductionController@store');
     Route::get('production/destroy/{production}', 'Admin\Production\ProductionController@destroy');
+
+    // Mobile page settings
+    Route::get('mobile', ['as' => 'admin.mobile', 'uses' => 'Admin\Mobile\SettingsController@getIndex']);
+    Route::post('mobile', 'Admin\Mobile\SettingsController@update');
+
+    // WHAT OUR CLIENTS ARE SAYING
+    Route::get('saying', ['as' => 'admin.saying.index', 'uses' => 'Admin\Saying\SayingController@getIndex']);
+    Route::get('saying/edit/{saying}', 'Admin\Saying\SayingController@getEdit');
+    Route::post('saying/edit/{saying}', 'Admin\Saying\SayingController@update');
+    Route::get('saying/create', 'Admin\Saying\SayingController@getCreate');
+    Route::post('saying/create', 'Admin\Saying\SayingController@store');
+    Route::get('saying/destroy/{saying}', 'Admin\Saying\SayingController@destroy');
+
+    // AND FUNS WIN TOO
+    Route::get('fun', ['as' => 'admin.fun.index', 'uses' => 'Admin\Fun\FunController@getIndex']);
+    Route::get('fun/edit/{fun}', 'Admin\Fun\FunController@getEdit');
+    Route::post('fun/edit/{fun}', 'Admin\Fun\FunController@update');
+    Route::get('fun/create', 'Admin\Fun\FunController@getCreate');
+    Route::post('fun/create', 'Admin\Fun\FunController@store');
+    Route::get('fun/destroy/{fun}', 'Admin\Fun\FunController@destroy');
+
+    // HOW IT WORKS
+    Route::get('work', ['as' => 'admin.work.index', 'uses' => 'Admin\Work\WorkController@getIndex']);
+    Route::get('work/edit/{work}', 'Admin\Work\WorkController@getEdit');
+    Route::post('work/edit/{work}', 'Admin\Work\WorkController@update');
+    Route::get('work/create', 'Admin\Work\WorkController@getCreate');
+    Route::post('work/create', 'Admin\Work\WorkController@store');
+    Route::get('work/destroy/{work}', 'Admin\Work\WorkController@destroy');
+
+    // YOUR BRAND SCORES
+    Route::get('score', ['as' => 'admin.score.index', 'uses' => 'Admin\Score\ScoreController@getIndex']);
+    Route::get('score/edit/{score}', 'Admin\Score\ScoreController@getEdit');
+    Route::post('score/edit/{score}', 'Admin\Score\ScoreController@update');
+    Route::get('score/create', 'Admin\Score\ScoreController@getCreate');
+    Route::post('score/create', 'Admin\Score\ScoreController@store');
+    Route::get('score/destroy/{score}', 'Admin\Score\ScoreController@destroy');
 });
 
 Route::auth();

@@ -26,7 +26,13 @@ class Setting extends Model
         'box_7',
         'business',
         'about',
-        'image'
+        'image',
+        'image_1',
+        'image_2',
+        'title_1',
+        'title_2',
+        'text_1',
+        'text_2'
     ];
 
     public function getUploadedBrandLogo()

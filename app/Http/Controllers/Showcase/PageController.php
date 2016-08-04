@@ -18,6 +18,10 @@ use App\Business;
 use App\Client;
 use App\Team;
 use App\Production;
+use App\Score;
+use App\Work;
+use App\Saying;
+use App\Fun;
 
 class PageController extends Controller
 {
@@ -49,7 +53,12 @@ class PageController extends Controller
     {
         return view('showcase.pages.mobile',
             [
-                'menus'     => Menu::getMainMenu()
+                'menus'     => Menu::getMainMenu(),
+                'funs'      => Fun::get(),
+                'works'     => Work::get(),
+                'scores'     => Score::get(),
+                'sayings'    => Saying::get(),
+                'settings'  => Setting::where('page', '=', 'mobile')->first()
             ]);
     }
 

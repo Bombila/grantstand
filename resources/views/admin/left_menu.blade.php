@@ -110,3 +110,37 @@
        content production
         <span class="glyphicon glyphicon-option-horizontal  pull-right"></span></a>
 </li>
+
+
+<li><h3>Mobile Page</h3></li>
+
+<li>
+    <a href="/admin/mobile">
+        Settings
+        <span class="glyphicon glyphicon-info-sign  pull-right"></span></a>
+</li>
+
+<li>
+    <a href="/admin/saying">
+        What our clients are saying
+        <span class="glyphicon glyphicon-option-horizontal  pull-right"></span></a>
+</li>
+
+<li>
+    <a href="/admin/score">
+        Your brand scores
+        <span class="glyphicon glyphicon-option-horizontal  pull-right"></span></a>
+</li>
+
+<li>
+    <a href="/admin/fun">
+        And funs win too
+        <span class="glyphicon glyphicon-option-horizontal  pull-right"></span></a>
+</li>
+
+<li>
+    <a href="/admin/work">
+        How it works
+        <span class="glyphicon glyphicon-option-horizontal  pull-right"></span></a>
+</li>
+
