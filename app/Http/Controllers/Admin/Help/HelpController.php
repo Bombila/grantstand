@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Help;
 use App\File;
 use Illuminate\Support\Facades\Validator;
+use App\Modal;
 
 class HelpController extends Controller
 {
@@ -23,9 +24,13 @@ class HelpController extends Controller
 
     public function getEdit(Help $help)
     {
-        //$helpLi = $help->getHelpToLiTag();
 
-        return view('admin.help.edit')->withHelp($help);
+        $modals = Modal::get();
+
+        return view('admin.help.edit', [
+            'modals' => $modals,
+            'help'  => $help
+        ]);
     }
 
     public function update(Help $help, Request $request, File $file)
@@ -47,6 +52,7 @@ class HelpController extends Controller
                 'name' => 'required',
                 'text' => 'required',
                 'image' => 'sometimes',
+                'modal_id' => 'sometimes'
             ]
         );
 
@@ -62,7 +68,9 @@ class HelpController extends Controller
 
     public function getCreate()
     {
-        return view('admin.help.create');
+        $modals = Modal::get();
+
+        return view('admin.help.create')->withModals($modals);
     }
 
     public function store(Request $request, File $file)
@@ -73,6 +81,7 @@ class HelpController extends Controller
                 'name' => 'required',
                 'text' => 'required',
                 'image' => 'sometimes',
+                'modal_id' => 'sometimes'
             ]
         );
 

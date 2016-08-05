@@ -23,7 +23,14 @@
                 <div class="trigger trigger--straight col-md-4"><img src="{{ $help->image }}" alt=""
                                                                      class="trigger__icon">
 
-                    <div class="trigger__header">{{ $help->name }}</div>
+                    <div class="trigger__header">
+                        <a
+                                href="#"
+                                class="media__link"
+                                data-toggle="modal"
+                                data-target="#myModal-{{ $help->modal_id }}">{{ $help->name }}
+                        </a>
+                    </div>
                     <div class="clearfix hidden-lg-up"></div>
                     <?php echo($help->text); ?>
                 </div>
@@ -133,3 +140,5 @@
 </main><!-- End of Main-->
 
 @stop
+
+@include('showcase.pages._modals')

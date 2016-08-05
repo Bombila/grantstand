@@ -38,21 +38,21 @@
 
 <li>
     <a href="/admin/review">
-        Reviews
+        WHAT OUR CLIENTS ARE SAYING
         <span class="glyphicon glyphicon-option-horizontal  pull-right"></span>
     </a>
 </li>
 
 <li>
     <a href="/admin/brand">
-        Brands
+        BRANDS AND ORGANIZATIONS WE WORK
         <span class="glyphicon glyphicon-option-horizontal  pull-right"></span>
     </a>
 </li>
 
 <li>
     <a href="/admin/article">
-        News
+        GRANDSTAND IN THE NEWS
         <span class="glyphicon glyphicon-option-horizontal  pull-right"></span>
     </a>
 </li>

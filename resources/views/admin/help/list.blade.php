@@ -21,6 +21,7 @@
         <tr>
                 <th>Name</th>
                 <th>Text</th>
+            <th>Modal window</th>
                 <th>Image</th>
                 <th>Actions</th>
         </tr>
@@ -32,6 +33,8 @@
                 <td>{{ $help->name }}</td>
 
                 <td>{{ $help->text }}</td>
+
+                <td> {{ $help->Modal->title }} </td>
 
                 <td><?php echo $help->getImageTag(); ?></td>
 

@@ -51,6 +51,23 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="form-group col-md-6">
+                <div class="form-group">
+                    <label for="modal_id">Modal window</label>
+                    <select  class="form-control" id="modal_id" name="modal_id">
+
+                        @foreach($modals as $modal)
+
+                            <option value="{{ $modal->id }}">{{ $modal->title }}</option>
+
+                        @endforeach
+
+                    </select>
+                </div>
+            </div>
+        </div>
+
 
 
 

@@ -43,6 +43,7 @@ class PageController extends Controller
     {
         return view('showcase.pages.services',
             [
+                'modals'    => Modal::get(),
                 'menus'     => Menu::getMainMenu(),
                 'helps'     => Help::getHelpsWithTags(),
                 'settings'  => Setting::where('page', '=', 'services')->first(),

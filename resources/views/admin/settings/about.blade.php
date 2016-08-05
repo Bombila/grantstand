@@ -58,6 +58,16 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="form-group col-md-6">
+                <div class="form-group">
+                    <label for="column_1">Contact us</label>
+                    <textarea class="form-control" name="column_1" id="column_1">{{ $settings->column_1 }}</textarea>
+                </div>
+            </div>
+        </div>
+
+
         <input type="hidden" name="uploaded_image" value="{{ $settings->image }}">
 
         <button type="submit" class="btn btn-primary">Save</button>

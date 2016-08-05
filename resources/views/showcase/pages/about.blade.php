@@ -76,8 +76,7 @@
     </section>
     <section class="contacts container"><h2 class="heading">Contact Us</h2>
 
-        <div class="contacts__info">You can reach outto us: by phone <span class="text-phone">917.648.0535</span><br>by
-            email <span class="text-email">info@grandstand.nyc</span></div>
+            <div class="contacts__info"><?php echo $settings->column_1; ?></div>
         <form id="contacts" method="post" action="contacts.php" class="contacts__form"><input type="text"
                                                                                               title="Enter you name here"
                                                                                               placeholder="Your Name"

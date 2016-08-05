@@ -6,7 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Help extends Model
 {
-    protected $fillable = ['name', 'text', 'image'];
+    protected $fillable = ['name', 'text', 'image', 'modal_id'];
+
+    public function Modal()
+    {
+        return $this->belongsTo(Modal::class);
+    }
 
     public function getImageTag()
     {
